@@ -1,0 +1,12 @@
+input::placeholder{
+    padding: 10px;
+}
+
+input{
+    font-size: 15rem;
+}
+
+
+*{
+    font-size: 100rem;
+}
