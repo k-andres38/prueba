@@ -37,21 +37,21 @@
                 <div class="col-span-2 p-0" >
                         <div class="grid grid-cols-2 mt-4 gap-x-4 auto-rows-auto">
                         <label for="nombres" >Nombres: <br>
-                            <input type="text" name="nombres"  class="border rounded" placeholder="Nombres">
+                            <input type="text" name="nombres"  class="border rounded" required placeholder="Nombres">
                         </label>
                     
 
                         <label for="apellidos">Apellidos: <br>
-                            <input type="text" name="apellidos"  class="border rounded" placeholder="Apellidos">
+                            <input type="text" name="apellidos"  class="border rounded" required placeholder="Apellidos">
                         </label>
                     
 
                         <label for="nit_cc">Nit/CC: <br>
-                            <input type="text" name="nit_cc"  class="border rounded" placeholder="NIT/CC">
+                            <input type="text" name="nit_cc"  class="border rounded" required placeholder="NIT/CC">
                         </label>
 
                         <label for="direccion">Dirección: <br>
-                            <input type="text" name="direccion"  class="border rounded" placeholder="Direción">
+                            <input type="text" name="direccion"  class="border rounded" required placeholder="Direción">
                         </label>
                         
                         
@@ -70,12 +70,12 @@
                         
 
                         <label for="telefono">Teléfono: <br>
-                            <input type="text" name="telefono"  class="border rounded" placeholder="Teléffono">
+                            <input type="text" name="telefono"  class="border rounded" required placeholder="Teléffono">
                         </label>
                         
 
                         <label for="contacto">Contacto: <br>
-                            <input type="text" name="contacto"  class="border rounded" placeholder="Contacto">
+                            <input type="text" name="contacto"  class="border rounded" required placeholder="Contacto">
                         </label>
                     
                         </div>
@@ -85,12 +85,12 @@
 
                 <div class="grid grid-cols-1 border-l p-4 bg-white p-0 ">
                     <label for="cupo_total" class=" mt-0">Cupo total:</label>
-                        <input type="text" name="cupo_total" class="border" placeholder="Cupo Total">
+                        <input type="number" name="cupo_total" class="border" required placeholder="Cupo Total">
                         <label for="cupo_disponible">Cupo disponible:</label>
-                        <input type="text" name="cupo_disponible"  class="border" placeholder="Cupo Disponible">
+                        <input type="number" name="cupo_disponible"  class="border" required placeholder="Cupo Disponible">
 
                         <label for="dias_gracia">Días de gracia:</label>
-                        <input type="text" name="dias_gracia"  class="border" placeholder="Dias de gracia">
+                        <input type="number" name="dias_gracia"  class="border" required placeholder="Dias de gracia">
 
                     
                 </div>
