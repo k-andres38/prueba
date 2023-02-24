@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CreditController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,9 +33,11 @@ Route::delete('eliminar/{client}',[ClientController::class,'destroy'])->name('cl
 
 //Route::get('cliente',[ClientController::class,'indexAction'])->name('cliente');
 Route::get('credit',[ClientController::class,''])->name('credit');
-//Route::get('client',[Client::class,'cliente'])->name('cliente');
+
 
 ////rutas post
 
 Route::post('/create', [ClientController::class,'create'])->name('client.create');
 
+
+Route::get('create',[CreditController::class,'create'])->name('credit.crear');

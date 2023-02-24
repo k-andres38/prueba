@@ -25,22 +25,22 @@ class ClientController extends Controller
     // }
 
     public function create(Request $request){
-        // $request->validate([
-        //     'nombres' => 'required',
-        //     'apellidos' => 'required',
-        //     'nit_cc' => 'required|numeric',
-        //     'direccion' => 'required',
-        //     'telefono' => 'required|numeric',
-        //     'ciudad' => 'required',
+        $request->validate([
+            'nombres' => 'required',
+            'apellidos' => 'required',
+            'nit_cc' => 'required|numeric',
+            'direccion' => 'required',
+            'telefono' => 'required|numeric',
+            'ciudad' => 'required',
             
-        //     'contacto' => 'required',
+            'contacto' => 'required',
             
-        //     'cupo_total' => 'required|numeric',
-        //     'dias_gracia' => 'required|numeric',
-        //     'cupo_disponible' => 'required|numeric',
-        //     'fecha_credito' => 'required|date',
-        //     'observaciones' => 'nullable',
-        // ]);
+            'cupo_total' => 'required|numeric',
+            'dias_gracia' => 'required|numeric',
+            'cupo_disponible' => 'required|numeric',
+            
+            
+        ]);
        
 
         $client=Client::create([
