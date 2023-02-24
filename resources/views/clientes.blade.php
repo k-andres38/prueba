@@ -51,7 +51,7 @@
                         <th class="p-2">Telefono</th>
                         <th class="p-2">Cupo Disponible</th>
                         
-                        <th class="p-2">Acciones</th>
+                        <th class="p-2 " colspan='2'>Acciones</th>
                         <th class="p-2"></th>
                         <th class="rounded-r p-2"></th>
                     </tr>
@@ -67,10 +67,10 @@
                             <td class="p-2" >{{$c->telefono}}</td>
                             <td  class="p-2">{{$c->cupo_disponible}}</td>
 
-
+                            <td> <a href="{{route('clientes.edit',$c->id)}}"><i class="fa-sharp fa-solid fa-user-pen"></i></a></td>
                         
                             <td>
-                            <a href="{{route('clientes.edit',$c->id)}}"><i class="fa-sharp fa-solid fa-user-pen"></i></a>
+                           
                                
                                 <form method="POST" action="{{ route('clientes.destroy', $c->id) }}">
                                     @csrf
@@ -78,7 +78,7 @@
                                     <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
                                 </form>
                             </td>
-                            <td>
+                           
                           
                             @endforeach
                 </tbody>
