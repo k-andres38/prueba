@@ -13,8 +13,9 @@
         </div class='mb-20 '>
         
         <div class="mb-2 pl-2 text-left"><i class="fa-solid fa-house"></i><a class="p-1" href="">Inicio</a></div>
-        <div class="mb-2 pl-2 text-left"><i class="fa-light fa-user-tie"></i><a class="p-1" href="{{route('clientes.show')}}">Clientes</a></div>
-        <div class="mb-2 pl-2 text-left"><i class="fa-regular fa-coins"></i><a class="p-1" href="{{route('credit.crear')}}">Créditos</a></div>
+        <div class="mb-2 pl-2 text-left"> <i class="fa-solid fa-user"></i><a class="p-1" href="{{route('clientes.show')}}">Clientes</a></div>
+        <div class="mb-2 pl-2 text-left"><i class="fa-sharp fa-solid fa-sack-dollar"></i></i><a class="p-1" href="{{route('credit.crear')}}">Créditos</a></div>
+       
 
         <button  class=" mb-6 rounded-lg bg-violet-600 text-white h-9 p-1 w-36 " style="margin-top: 35vh;">Cerrar Sesion</button>
     </article>
