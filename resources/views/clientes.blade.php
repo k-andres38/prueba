@@ -25,8 +25,8 @@
         <h2 class="text-center  bg-white text-2xl p-2 rounded-[15px] text-violet-600 font-bold">Clientes</h2>
        
             <article class="grid place-items-center bg-white p-5 mt-5 rounded">
-            <section class="">
-                <main class="flex justify-between mt-1 items-center  ">
+            <section class="w-full">
+                <main class="flex justify-between mt-1 items-center w-full  ">
                 <form method="GET" action="">
                     <div class="border place-items-center p-1 bg-white rounded">
                     <input type="text" name="info" placeholder="Nombre NIT o CC" class="pl-2 outline-none " >
@@ -39,7 +39,7 @@
                 <div><a class="p-2 mb-6 rounded bg-violet-600 text-white text-center h-9 p-1 w-36 " href="{{route('crear.cliente')}}">Crear Cliente</a></div>
                 </div>
             </main>
-            <table class="table-auto  mt-10 text-center w-full text-sm font-normal">
+            <table class="table-auto  mt-10 text-center w-full text-sm font-normal border-spacing-x-28">
                 <thead class=" bg-violet-600 text-white rounded-lg h-10">
                     <tr >
                         <th class="rounded-l p-2">Nombres</th>
@@ -56,7 +56,7 @@
                         <th class="rounded-r p-2"></th>
                     </tr>
                 </thead>
-                <tbody class="border-separate border-spacing-x-4 p-5">
+                <tbody class="border-separate  ">
                     @foreach($cliente1 as $c)
                         <tr >
                             <td class="p-2" >{{$c->nombres}}</td>
@@ -70,11 +70,13 @@
 
                         
                             <td>
-                                <a href="{{route('clientes.show',$c->id)}}">
-                                    <button class="btn btn-primary btn-sm">
-                                        <i class="fa-solid fa-eye"></i>
-                                    </button>
-                                </a>
+                            <a href="{{route('clientes.edit',$c->id)}}"><i class="fa-sharp fa-solid fa-user-pen"></i></a>
+                               
+                                <form method="POST" action="{{ route('clientes.destroy', $c->id) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                                </form>
                             </td>
                             <td>
                           

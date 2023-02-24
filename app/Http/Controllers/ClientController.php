@@ -60,13 +60,15 @@ class ClientController extends Controller
 
     }
 
-    public function edit(Client $client){
-        return view('edit',compact('client'));
+    public function edit( $id){
+        $client=Client::find($id);
+        
+        return view('editar-cliente',compact('client'));
     }
 
     public function destroy(Client $client ){
         $client->delete();
-        return redirect()->route('index');
+        return redirect()->route('clientes.show');
     }
 
     public function credit($cli){

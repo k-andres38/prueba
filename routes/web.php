@@ -25,6 +25,9 @@ Route::get('crear-cliente', function () {
 })->name('crear.cliente');
 
 Route::get('clientes',[ClientController::class,'show'])->name('clientes.show');
+Route::get('/clientes/{id}/editar',[ClientController::class,'edit'])->name('clientes.edit');
+Route::put('/clientes/{id}',[ClientController::class,'update'])->name('clientes.update');
+Route::delete('eliminar/{client}',[ClientController::class,'destroy'])->name('clientes.destroy');
 
 
 //Route::get('cliente',[ClientController::class,'indexAction'])->name('cliente');
