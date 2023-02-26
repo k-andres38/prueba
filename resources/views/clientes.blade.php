@@ -6,22 +6,7 @@
 
 <main class="flex">
     
-<aside class="bg-white rounded-[15px] text-center">
-    <article class="content-between h-full">
-    <div class="w-48 p-10 mt-10"><img src="{!!asset('imagenes/admin.png')!!}">
-    <h4 class="text-center p-1">Admin</h4>
-        </div class='mb-20 '>
-        
-        <div class="mb-2 pl-2 text-left"><i class="fa-solid fa-house"></i><a class="p-1" href="{{route('home')}}">Inicio</a></div>
-        <div class="mb-2 pl-2 text-left"><i class="fa-duotone fa-user-tie"></i><a class="p-1" href="{{route('clientes.show')}}">Clientes</a></div>
-        <div class="mb-2 pl-2 text-left"><i class="fa-regular fa-coins"></i><a class="p-1" href="{{route('credit.crear')}}">Créditos</a></div>
-        <div><i class="fa-duotone fa-user-tie"></i></div>
-
-        <button  class=" mb-6 rounded-lg bg-violet-600 text-white h-9 p-1 w-36 " style="margin-top: 35vh;">Cerrar Sesion</button>
-    </article>
-    
-
-</aside >
+@include('layouts.aside')
 <section class="w-full ml-20   " >
         <h2 class="text-center  bg-white text-2xl p-2 rounded-[15px] text-violet-600 font-bold">Clientes</h2>
        
@@ -52,9 +37,9 @@
                         <th class="p-2">Telefono</th>
                         <th class="p-2">Cupo Disponible</th>
                         
-                        <th class="p-2 " colspan='2'>Acciones</th>
-                        <th class="p-2"></th>
-                        <th class="rounded-r p-2"></th>
+                        <th class="p-2 rounded-r" colspan='2'>Acciones</th>
+                    
+                      
                     </tr>
                 </thead>
                 <tbody class="border-separate  ">
@@ -64,9 +49,9 @@
                             <td class="p-2" >{{$c->apellidos}}</td>
                             <td class="p-2" >{{$c->nit_cc}}</td>
                             <td class="p-2" >{{$c->ciudad}}</td>
-                            <td  class="p-2">{{$c->direccion}}</td>
+                            <td  class="p-2">{{$c->dirección}}</td>
                             <td class="p-2" >{{$c->telefono}}</td>
-                            <td  class="p-2">{{$c->cupo_disponible}}</td>
+                            <td  class="p-2">${{$c->cupo_disponible}}</td>
 
                             <td> <a href="{{route('clientes.edit',$c->id)}}"><i class="fa-sharp fa-solid fa-user-pen"></i></a></td>
                         

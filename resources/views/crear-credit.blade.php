@@ -1,6 +1,6 @@
 @extends('layouts.plantilla')
 
-@section('title','Formulario')
+@section('title','Credito')
 
 @section('content')
 
@@ -8,21 +8,7 @@
 
     <main class="flex">
     
-    <aside class="bg-white rounded-[15px] text-center">
-    <article class="content-between h-full">
-    <div class="w-48 p-10 mt-10"><img src="{!!asset('imagenes/admin.png')!!}">
-    <h4 class="text-center p-1">Admin</h4>
-        </div class='mb-20 '>
-        
-        <div class="mb-2 pl-2 text-left"><i class="fa-solid fa-house"></i><a class="p-1" href="{{route('home')}}">Inicio</a></div>
-        <div class="mb-2 pl-2 text-left"><i class="fa-regular fa-user-tie"></i></i><a class="p-1" href="{{route('clientes.show')}}">Clientes</a></div>
-        <div class="mb-2 pl-2 text-left"><i class="fa-regular fa-coins"></i><a class="p-1" href="{{route('credit.crear')}}">Créditos</a></div>
-
-        <button  class=" mb-6 rounded-lg bg-violet-600 text-white h-9 p-1 w-36 " style="margin-top: 35vh;">Cerrar Sesion</button>
-    </article>
-    
-
-</aside >
+    @include('layouts.aside')
 <section class="w-full ml-20  " >
 
 <h2 class="text-center ml-6 bg-white text-2xl p-2 rounded-[15px] text-violet-600 font-bold">Nuevo Crédito</h2>
@@ -31,7 +17,7 @@
         
            <div class="w-98 m-auto ">
           
-           <form method="POST" action="{{route('client.create')}}" class="rounded-[15px] m-auto  pb-5 pl-5 flex border-l bg-white    ">
+           <form method="POST" action="{{route('client.create')}}" class="rounded-[15px] m-auto  pb-5 pl-5 grid gap-8 border-l bg-white    ">
                 @csrf
                 
                 <div class="col-span-2 p-0 pr-5 text center grid place-items-center" >

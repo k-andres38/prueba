@@ -29,6 +29,8 @@ class Client extends Model
         'dias_gracia',
         'cupo_disponible',
         'fecha_credito',
+        'estado',
+
     ];
     // protected $table = [
     //     'nombre',

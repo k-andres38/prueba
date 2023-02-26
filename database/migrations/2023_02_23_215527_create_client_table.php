@@ -25,7 +25,8 @@ return new class extends Migration
             $table->string('cupo_total');
             $table->string('cupo_disponible');
             $table->string('dias_gracia');
-            
+           
+            $table->enum('estado',['Activo','Inactivo']);
 
             $table->timestamps();
 
