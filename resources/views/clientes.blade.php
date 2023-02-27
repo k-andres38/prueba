@@ -13,7 +13,8 @@
             <article class="grid place-items-center bg-white p-5 mt-5 rounded">
             <section class="w-full">
                 <main class="flex justify-between mt-1 items-center w-full  ">
-                <form method="GET" action="">
+                <form method="POST" action="{{route('clientes.showSearch')}}">
+                     @csrf
                     <div class="border place-items-center p-1 bg-white rounded">
                     <input type="text" name="info" placeholder="Nombre NIT o CC" class="pl-2 outline-none " >
                     <button><i class="fa-solid fa-magnifying-glass bg-sky-200 p-1 rounded" style="color:#7dd3fc"></i></button>
@@ -49,7 +50,7 @@
                             <td class="p-2" >{{$c->apellidos}}</td>
                             <td class="p-2" >{{$c->nit_cc}}</td>
                             <td class="p-2" >{{$c->ciudad}}</td>
-                            <td  class="p-2">{{$c->dirección}}</td>
+                            <td  class="p-2">{{$c->direccion}}</td>
                             <td class="p-2" >{{$c->telefono}}</td>
                             <td  class="p-2">${{$c->cupo_disponible}}</td>
 

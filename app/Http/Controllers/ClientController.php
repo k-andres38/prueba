@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Str;
 use App\Models\Client;
 use App\Models\Credit;
+use Illuminate\Support\Facades\DB;
 
 class ClientController extends Controller
 {
@@ -17,6 +18,12 @@ class ClientController extends Controller
        
        
         return view('clientes',compact('cliente1'));
+    }
+
+    public function showSearch(Request $request){
+    $cliente1 = DB::table('client')->where('nit_cc','=', $request->info)->get();
+    return view('clientes',compact('cliente1'));
+        
     }
     //
 

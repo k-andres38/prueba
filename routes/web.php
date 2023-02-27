@@ -31,6 +31,8 @@ Route::put('/clientes/{id}',[ClientController::class,'update'])->name('clientes.
 Route::delete('eliminar/{client}',[ClientController::class,'destroy'])->name('clientes.destroy');
 
 
+
+
 //Route::get('cliente',[ClientController::class,'indexAction'])->name('cliente');
 Route::get('credit',[ClientController::class,''])->name('credit');
 
@@ -38,6 +40,10 @@ Route::get('credit',[ClientController::class,''])->name('credit');
 ////rutas post
 
 Route::post('/create', [ClientController::class,'create'])->name('client.create');
+Route::post('show/',[ClientController::class,'showSearch'])->name('clientes.showSearch');
 
 
+
+
+//rutas creditos
 Route::get('create',[CreditController::class,'create'])->name('credit.crear');
