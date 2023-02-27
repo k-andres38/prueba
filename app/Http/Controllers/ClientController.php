@@ -21,10 +21,23 @@ class ClientController extends Controller
     }
 
     public function showSearch(Request $request){
-    $cliente1 = DB::table('client')->where('nit_cc','=', $request->info)->get();
-    return view('clientes',compact('cliente1'));
-        
+    
+
+        if (preg_match('/[A-Za-z]/', $request->info)) {
+            $cliente1 = DB::table('client')->where('nombres','=', $request->info)->get();
+            return view('clientes',compact('cliente1')); 
+        } else {
+          // Si la consulta no contiene letras y números, se ejecuta este bloque de código
+          $cliente1 = DB::table('client')->where('nit_cc','=', $request->info)->get();
+          return view('clientes',compact('cliente1')); 
+        }
+
+
     }
+
+   
+    
+
     //
 
     // public function indexAction(){
