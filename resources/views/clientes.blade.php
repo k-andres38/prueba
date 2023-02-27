@@ -54,7 +54,7 @@
                             <td class="p-2" >{{$c->telefono}}</td>
                             <td  class="p-2">${{$c->cupo_disponible}}</td>
 
-                            <td> <a href="{{route('clientes.edit',$c->id)}}"><i class="fa-sharp fa-solid fa-user-pen"></i></a></td>
+                            <td> <a href="{{route('clientes.edit',$c->id)}}"><i class="fa-sharp fa-solid fa-user-pen bg-violet-200" style="color:#7c3aed"></i></a></td>
                         
                             <td>
                            
@@ -62,7 +62,7 @@
                                 <form method="POST" action="{{ route('clientes.destroy', $c->id) }}">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
+                                    <button type="submit"><i class="fa-solid fa-trash-can bg-violet-200" style="color:#7c3aed"></i></button>
                                 </form>
                             </td>
                            
