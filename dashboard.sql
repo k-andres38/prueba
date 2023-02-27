@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 24, 2023 at 06:48 PM
+-- Generation Time: Feb 27, 2023 at 07:21 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -39,6 +39,7 @@ CREATE TABLE `client` (
   `cupo_total` varchar(255) NOT NULL,
   `cupo_disponible` varchar(255) NOT NULL,
   `dias_gracia` varchar(255) NOT NULL,
+  `estado` enum('Activo','Inactivo') NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -47,10 +48,11 @@ CREATE TABLE `client` (
 -- Dumping data for table `client`
 --
 
-INSERT INTO `client` (`id`, `nombres`, `apellidos`, `nit_cc`, `ciudad`, `direccion`, `telefono`, `contacto`, `cupo_total`, `cupo_disponible`, `dias_gracia`, `created_at`, `updated_at`) VALUES
-(9, 'dh', 'hjk', 'hfgh', 'Sincelejo', 'hfghf', 'hfgh', 'gfhfgh', 'ghfg', 'hfgh', 'gfhf', '2023-02-24 09:36:23', '2023-02-24 09:36:23'),
-(10, 'gg', 'gfdg', 'dfgdf', 'Barranquilla', 'dfg', 'gdfg', 'dfg', 'gdfgd', 'gdfg', 'dgd', '2023-02-24 09:58:58', '2023-02-24 09:58:58'),
-(11, 'carodq', 'ghg', '12312312', 'Sincelejo', 'fdgdf', '23', 'bnn', '123', '4545', '131', '2023-02-24 22:01:43', '2023-02-24 22:01:43');
+INSERT INTO `client` (`id`, `nombres`, `apellidos`, `nit_cc`, `ciudad`, `direccion`, `telefono`, `contacto`, `cupo_total`, `cupo_disponible`, `dias_gracia`, `estado`, `created_at`, `updated_at`) VALUES
+(1, 'Carlos', 'navarro', '1192807999', 'Cartagena', 'Cra 7 dadfsg', '312540894', 'carlos', '50', '45', '5', 'Activo', '2023-02-25 22:24:31', '2023-02-27 22:11:18'),
+(2, 'njsgfhfg', 'jhij', '123456', 'Sincelejo', 'kjkjg;', '34534', 'fdgdfs', '546', '546', '7', 'Activo', '2023-02-27 20:44:21', '2023-02-27 20:44:21'),
+(3, 'carlos', 'gh', '456321', 'Cartagena', 'bcvbcvb', '4544', 'sdas', '45', '554', '54', 'Activo', '2023-02-27 20:49:55', '2023-02-27 20:49:55'),
+(4, 'Carlos', 'navarro', '1192807999', 'Cartagena', 'Cra 7 dadfsg', '312540894', 'carlos', '50', '42', '5', 'Activo', '2023-02-27 21:29:56', '2023-02-27 23:20:11');
 
 -- --------------------------------------------------------
 
@@ -59,7 +61,6 @@ INSERT INTO `client` (`id`, `nombres`, `apellidos`, `nit_cc`, `ciudad`, `direcci
 --
 
 CREATE TABLE `credit` (
-  `id` bigint(20) UNSIGNED NOT NULL,
   `n_pagare` varchar(255) NOT NULL,
   `monto_credito` varchar(255) NOT NULL,
   `cuota_inicial` varchar(255) NOT NULL,
@@ -90,9 +91,10 @@ CREATE TABLE `migrations` (
 --
 
 INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
-(49, '2014_10_12_000000_create_users_table', 1),
-(50, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(51, '2023_02_23_215527_create_client_table', 1);
+(5, '2014_10_12_000000_create_users_table', 1),
+(6, '2019_12_14_000001_create_personal_access_tokens_table', 1),
+(7, '2023_02_23_215527_create_client_table', 1),
+(8, '2023_02_23_215542_create_credit_table', 1);
 
 -- --------------------------------------------------------
 
@@ -144,8 +146,7 @@ ALTER TABLE `client`
 -- Indexes for table `credit`
 --
 ALTER TABLE `credit`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `credi_client` (`client_id`);
+  ADD UNIQUE KEY `credit_client_id_unique` (`client_id`);
 
 --
 -- Indexes for table `migrations`
@@ -176,19 +177,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
---
--- AUTO_INCREMENT for table `credit`
---
-ALTER TABLE `credit`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -210,7 +205,7 @@ ALTER TABLE `users`
 -- Constraints for table `credit`
 --
 ALTER TABLE `credit`
-  ADD CONSTRAINT `credi_client` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`);
+  ADD CONSTRAINT `credit_client_id_foreign` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
