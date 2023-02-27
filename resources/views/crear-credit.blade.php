@@ -97,16 +97,7 @@
                     
                     </form>
 
-                    <label class="absolute top-0 right-[30%] inline-block" for="cedula"> Cédula del cliente <br>
-                            <form method="POST" action="{{route('clientes.show')}}" class=" flex flex-nowrap" id="search-form">
-                            @csrf
-                                    
-                                <input type="number" name="info" placeholder="Cédula" class="pl-2 outline-none border rounded " >
-                                <button type="submit"><i class="fa-solid fa-magnifying-glass bg-sky-200 p-1 rounded " style="color:#7dd3fc"></i></button>
-                                
-                            </form>
-
-                        </label>
+                
 
                 </div>
 
