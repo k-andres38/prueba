@@ -17,9 +17,9 @@
         
            <div class="w-98 m-auto ">
            <h2 class="font-semibold " >Datos Personales</h2>
-           <form method="POST" action="{{route('client.create')}}" class="rounded-[15px] m-auto  pb-5 pl-5 flex border-l bg-white grid grid-cols-3   ">
+           <form method="POST" action="{{route('clientes.update',$client)}}" class="rounded-[15px] m-auto  pb-5 pl-5 flex border-l bg-white grid grid-cols-3   ">
                 @csrf
-                
+               @method('put')
                 <div class="col-span-2 p-0" >
                         <div class="grid grid-cols-2 mt-4 gap-x-4 auto-rows-auto">
                         <label for="nombres" >Nombres: <br>

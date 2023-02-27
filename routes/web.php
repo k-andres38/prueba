@@ -37,6 +37,10 @@ Route::delete('eliminar/{client}',[ClientController::class,'destroy'])->name('cl
 Route::get('credit',[ClientController::class,''])->name('credit');
 
 
+//ruta put update cliente
+
+Route::put('/clientes/{client}',[ClientController::class,'update'])->name('clientes.update');
+
 ////rutas post
 
 Route::post('/create', [ClientController::class,'create'])->name('client.create');

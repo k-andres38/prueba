@@ -83,8 +83,30 @@ class ClientController extends Controller
 
     public function edit( $id){
         $client=Client::find($id);
+      
         
         return view('editar-cliente',compact('client'));
+    }
+
+    public function update(Request $request, Client $client){
+        $client=Client::find($request->id);
+       
+
+        $client->update([
+            'nombres' => $request->nombres,
+            'apellidos' => $request->apellidos,
+            'nit_cc' => $request->nit_cc,
+            'direccion' => $request->direccion,
+            'telefono' => $request->telefono,
+            'ciudad' => $request->ciudad,
+            'contacto' => $request->contacto,
+            'cupo_total' => $request->cupo_total,
+            'dias_gracia' => $request->dias_gracia,
+            'cupo_disponible' => $request->cupo_disponible,
+        ]);
+        
+        return redirect()->route('clientes.show',$client);
+
     }
 
     public function destroy(Client $client ){
@@ -92,7 +114,5 @@ class ClientController extends Controller
         return redirect()->route('clientes.show');
     }
 
-    public function credit($cli){
-        
-    }
+    
 }
